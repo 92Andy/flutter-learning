@@ -41,7 +41,31 @@ class MyHomePage extends StatelessWidget {
             const Text(
               'Counter value:',
             ),
-            BlocBuilder<CounterCubit, CounterState>(
+            BlocConsumer<CounterCubit, CounterState>(
+              listener: (context, state) {
+                if (state.wasIncremented == null) {
+                  return;
+                }
+                if (state.wasIncremented!) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('incremented'),
+                      duration: Duration(
+                        microseconds: 500,
+                      ),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('decremented'),
+                      duration: Duration(
+                        microseconds: 500,
+                      ),
+                    ),
+                  );
+                }
+              },
               builder: (context, state) {
                 return Text(
                   state.counterValue.toString(),
