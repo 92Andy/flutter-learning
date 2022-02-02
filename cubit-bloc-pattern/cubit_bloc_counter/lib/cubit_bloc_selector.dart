@@ -8,19 +8,42 @@ class CubitBlocSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CubitCounterPage(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Select Counter'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(
+                key: UniqueKey(),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CubitCounterPage(),
+                  ),
+                ),
+                child: const Text('Go to cubit counter'),
               ),
             ),
-            child: const Text('Go to the Cubit counter'),
-          ),
-        ],
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(
+                key: UniqueKey(),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CubitCounterPage(),
+                  ),
+                ),
+                child: const Text('Go to bloc counter'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
