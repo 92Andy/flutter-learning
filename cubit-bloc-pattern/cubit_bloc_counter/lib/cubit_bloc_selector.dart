@@ -1,3 +1,4 @@
+import 'package:cubit_bloc_counter/cubit_counter/cubit_counter_page.dart';
 import 'package:flutter/material.dart';
 
 class CubitBlocSelector extends StatelessWidget {
@@ -11,7 +12,12 @@ class CubitBlocSelector extends StatelessWidget {
       child: Column(
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CubitCounterPage(),
+              ),
+            ),
             child: const Text('Go to the Cubit counter'),
           ),
         ],

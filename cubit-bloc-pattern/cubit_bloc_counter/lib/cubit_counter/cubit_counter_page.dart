@@ -2,8 +2,8 @@ import 'package:cubit_bloc_counter/cubit_counter/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({
+class CubitCounterPage extends StatelessWidget {
+  const CubitCounterPage({
     Key? key,
   }) : super(key: key);
 
