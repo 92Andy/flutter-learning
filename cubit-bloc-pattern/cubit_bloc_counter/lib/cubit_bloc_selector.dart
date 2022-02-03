@@ -18,28 +18,31 @@ class CubitBlocSelector extends StatelessWidget {
           children: [
             SizedBox(
               width: 200,
-              child: ElevatedButton(
-                key: UniqueKey(),
+              child: FloatingActionButton.extended(
+                heroTag: 'cubit_btn',
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CubitCounterPage(),
                   ),
                 ),
-                child: const Text('Go to cubit counter'),
+                label: const Text('Go to cubit counter'),
               ),
+            ),
+            const SizedBox(
+              height: 30,
             ),
             SizedBox(
               width: 200,
-              child: ElevatedButton(
-                key: UniqueKey(),
+              child: FloatingActionButton.extended(
+                heroTag: 'bloc_btn',
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CubitCounterPage(),
                   ),
                 ),
-                child: const Text('Go to bloc counter'),
+                label: const Text('Go to bloc counter'),
               ),
             ),
           ],
