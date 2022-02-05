@@ -13,7 +13,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     );
 
     on<DecrementEvent>(
-      (_, __) => emit(
+      (_, emit) => emit(
         CounterState(counterValue: state.counterValue - 1),
       ),
     );
