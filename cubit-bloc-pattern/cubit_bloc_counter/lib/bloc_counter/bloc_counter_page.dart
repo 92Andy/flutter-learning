@@ -34,7 +34,28 @@ class BlocCounterView extends StatelessWidget {
             const Text(
               'Counter value:',
             ),
-            BlocBuilder<CounterBloc, CounterState>(
+            BlocConsumer<CounterBloc, CounterState>(
+              listener: (context, state) {
+                if (state is CounterIncrementedState) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('incremented'),
+                      duration: Duration(
+                        microseconds: 500,
+                      ),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('decremented'),
+                      duration: Duration(
+                        microseconds: 500,
+                      ),
+                    ),
+                  );
+                }
+              },
               builder: (context, state) {
                 return Text(
                   state.counterValue.toString(),
