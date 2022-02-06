@@ -1,3 +1,4 @@
+import 'package:cubit_bloc_counter/bloc_counter/bloc_counter_page.dart';
 import 'package:cubit_bloc_counter/cubit_counter/cubit_counter_page.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,7 @@ class CubitBlocSelector extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CubitCounterPage(),
+                    builder: (context) => const BlocCounterPage(),
                   ),
                 ),
                 label: const Text('Go to bloc counter'),

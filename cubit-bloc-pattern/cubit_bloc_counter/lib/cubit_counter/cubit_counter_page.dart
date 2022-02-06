@@ -60,6 +60,7 @@ class CubitCounterPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FloatingActionButton(
+                    heroTag: 'Decrement_cubit_btn',
                     onPressed: () {
                       context.read<CounterCubit>().decrement();
                     },
@@ -67,6 +68,7 @@ class CubitCounterPage extends StatelessWidget {
                     child: const Icon(Icons.remove),
                   ),
                   FloatingActionButton(
+                    heroTag: 'Increment_cubit_btn',
                     onPressed: () {
                       context.read<CounterCubit>().increment();
                     },

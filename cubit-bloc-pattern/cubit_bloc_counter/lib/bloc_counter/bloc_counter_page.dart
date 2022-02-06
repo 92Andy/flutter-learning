@@ -36,6 +36,7 @@ class BlocCounterPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FloatingActionButton(
+                    heroTag: 'Decrement_bloc_btn',
                     onPressed: () {
                       context.read<CounterBloc>().add(DecrementEvent());
                     },
@@ -43,6 +44,7 @@ class BlocCounterPage extends StatelessWidget {
                     child: const Icon(Icons.remove),
                   ),
                   FloatingActionButton(
+                    heroTag: 'Increment_bloc_btn',
                     onPressed: () {
                       context.read<CounterBloc>().add(IncrementEvent());
                     },
